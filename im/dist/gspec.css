@@ -1,0 +1,149 @@
+@charset "UTF-8";
+a:link{
+	color:#0033cc
+}
+a:visited{
+	color:#336699
+}
+a:active{
+	color:#336699
+}
+a:hover{
+	color:#80FFFF
+}
+
+body{
+	color:#000099;
+	background-color:#3399FF;
+	scrollbar-3dlight-color:#000099;
+	scrollbar-arrow-color:#000099;
+	scrollbar-base-color:#3399FF;
+	scrollbar-darkshadow-color:#000099;
+	scrollbar-face-color:#3399FF;
+	scrollbar-highlight-color:#3399FF;
+	scrollbar-shadow-color:#3399FF
+}
+/* <u> */
+u,span.u{
+	text-decoration:underline
+}
+/* <b> */
+b,.b{
+	font-weight:bold
+}
+/* <i> */
+i,.i{
+	font-style:oblique
+}
+/* <nobr> */
+span.nobr{
+	white-space:nowrap
+}
+/* <font fontsize="1"> */
+span.size1{
+	font-size:60%
+}
+/* <font fontsize="2"> */
+span.size2{
+	font-size:80%
+}
+/* <font fontsize="4"> */
+span.size4{
+	font-size:125%
+}
+/* <font fontsize="5"> */
+span.size5{
+	font-size:150%
+}
+
+table{
+	border:0px
+}
+
+/* <table cellspacing="0" cellpadding="0"> */
+table.cell0{
+	border-collapse:collapse
+}
+table.cell0 td,table.cell0 th{
+	padding:0
+}
+
+th,td{
+	text-align:left
+}
+
+/* align="left" */
+.left{
+	text-align:left
+}
+.left table{
+	margin-left:auto;
+	margin-right:0px
+}
+
+/* <center>, align="center" */
+.center{
+	text-align:center
+}
+.center table{
+	margin-left:auto;
+	margin-right:auto
+}
+
+/* align="right" */
+.right{
+	text-align:right
+}
+.right table{
+	margin-left:0px;
+	margin-right:auto
+}
+
+hr{
+	width:100%
+}
+
+input.button,button{
+	font-family:monospace;
+	background-color:#E0FFFF;
+	border:1px solid #000099;
+	color:#000099;
+	height:22px;
+	cursor:pointer
+}
+
+input.text,textarea{
+	font-family:monospace;
+	background-color:#F0FFFF;
+	color:#000066;
+	border:1px solid #000066
+}
+
+textarea{
+	overflow:auto;
+	font-size:16px
+}
+
+input.radio,input.checkbox{
+	background-color:#3399ff;
+	color:#000099;
+	cursor:pointer
+}
+
+select{
+	background-color:#E0FFFF;
+	color:#000066;
+	cursor:pointer;
+	border:1px solid #000099
+	font-family:monospace;
+	font-size:90%
+}
+label{
+	cursor:pointer
+}
+img {
+	border:none
+}
+body,input.text,input.button,textarea{
+	line-height:1
+}

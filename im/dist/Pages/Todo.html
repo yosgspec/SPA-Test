@@ -1,0 +1,91 @@
+<html>
+<head>
+	<link rel=stylesheet href="../gspec.css">
+	<style>
+		.done{
+			text-decoration:line-through;
+		}
+	</style>
+</head>
+<body>
+<h1>Todo</h1>
+
+<ul>
+	<div id=items></div>
+</ul>
+<input placeholder="キミの予定は?" id=newTitle onkeyup="addItem()"><button onclick="delItem(this)">抹消</button>
+
+<script>
+	const newTitle=document.getElementById("newTitle");
+	var items=[];
+
+	function bindItems(){
+		for(let i=0;i<items.length;i++){
+			try{
+				items[i].isChecked=document.getElementById(`item${i}`).checked;
+			}
+			catch{}
+		}
+	}
+
+	function changeItems(){
+		function itemDom(id,item){return `
+			<li>
+				<label class=${item.isChecked? "done": ""}>
+					<input type=checkbox id=item${id} ${item.isChecked? "checked": ""} onchange="regist()">${item.title}
+				</label>
+			</li>
+		`;}
+
+		const itemsDom=document.getElementById("items");
+		itemsDom.innerHTML="";
+		for(let i=0;i<items.length;i++){
+			itemsDom.innerHTML+=itemDom(i,items[i]);
+		}
+		try{
+			setHeight();
+		}
+		catch{}
+	}
+
+	function memoryLoad(){
+		return JSON.parse(localStorage.getItem("todo"));
+	}
+
+	function memorySave(memory){
+		localStorage.setItem("todo",JSON.stringify(memory));
+	}
+
+	addEventListener("load",async()=>{
+		items=memoryLoad() || [];
+		changeItems();
+ 	});
+
+	function regist(){
+		bindItems();
+		changeItems();
+		memorySave(items);
+	}
+
+	function addItem(){
+		if(event.key=="Enter"){
+			items.push({title:newTitle.value,isChecked:false});
+			changeItems();
+			newTitle.value="";
+			regist();
+		}
+	}
+
+	function delItem(){
+		items=items.filter(v=>!v.isChecked);
+		changeItems();
+		regist();
+	}
+</script>
+<script>
+	function setHeight(){parent.postMessage(document.documentElement.scrollHeight)};
+	window.addEventListener("resize",setHeight);
+	setHeight();
+</script>
+</body>
+</html>

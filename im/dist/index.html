@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset=utf-8>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name=viewport content="width=device-width,initial-scale=1.0">
+	<title>SPA! from IFrame</title>
+	<base href="/" />
+	<link rel=icon href="favicon.ico">
+	<link rel=stylesheet href="gspec.css">
+	<style>
+	body{
+		margin:0px;
+		padding:0;
+	}
+	iframe {
+		overflow:hidden;
+		overflow-x:hidden;
+		overflow-y:hidden;
+		width:100%;
+		position:relative;
+		top:0px;
+		left:0px;
+		right:0px;
+		bottom:0px;
+	}
+	</style>
+</head>
+
+<body>
+	<div><iframe name=menu src="NavMenu.html?0" frameborder=0 scrolling=no style=height:2em></iframe></div>
+	<div><iframe name=body src="Pages/Home.html?0" frameborder=0 scrolling=no></iframe></div>
+	<script>
+	window.addEventListener("message",function(e){
+		document.getElementsByName("body")[0].height=e.data;
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+	<link rel="stylesheet" href="gspec.css">
+	<style>
+		div {
+			background-color:#DDEEFF;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<a target="body" id="" onclick="setAddress(this)" href="Pages/Home.html?0">Home</a> |
+	<a target="body" id="Counter" onclick="setAddress(this)" href="Pages/Counter.html?0">Counter</a> |
+	<a target="body" id="Todo" onclick="setAddress(this)" href="Pages/Todo.html?0">Todo</a>
+</div>
+<script>
+	parent.postMessage(document.documentElement.scrollHeight);
+
+	const id=parent.location.hash.replace(/#/,"");
+	if(id){
+		window.open(document.getElementById(id).href,"body");
+	}
+
+	function setAddress(e){
+		parent.location.hash=e.id;
+	}
+</script>
+</body>
+
+</html>

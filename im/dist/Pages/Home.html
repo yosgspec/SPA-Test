@@ -1,0 +1,17 @@
+<html>
+<head>
+	<link rel=stylesheet href="../gspec.css">
+</head>
+<body>
+<div class=home>
+	<span id=hello></span>
+	<script src="../HelloWorld.js"></script>
+	<script>HelloWorld("hello","SinglePageApplication!");</script>
+</div>
+<script>
+	const setHeight=()=>parent.postMessage(document.documentElement.scrollHeight);
+	window.addEventListener("resize",setHeight);
+	setHeight();
+</script>
+</body>
+</html>

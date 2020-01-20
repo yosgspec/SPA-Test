@@ -1,0 +1,65 @@
+﻿@page "/todo"
+@inject IJSRuntime jsRuntime;
+@using System.Text.Json;
+
+<div id=todo>
+	<h1>Todo</h1>
+	<ul>
+		@foreach(var item in items){<li>
+			<label class=@(item.isChecked? "done-Todo": "")>
+				<input type=checkbox @bind=@item.isChecked @onclick="regist">@item.title
+			</label>
+		</li>}
+	</ul>
+	<input placeholder="キミの予定は?" @bind=@newTitle @onkeyup="addItem"><button @onclick="delItem">抹消</button>
+</div>
+
+@code{
+	class Item{
+		public string title{get;set;}
+		public bool isChecked{get;set;}
+	}
+	List<Item> items=new List<Item>{};
+	string newTitle="";
+
+	async Task<T> memoryLoad<T>(){
+		return JsonSerializer.Deserialize<T>(await jsRuntime.InvokeAsync<string>(
+			"localStorage.getItem","todo"));
+	}
+
+	async Task memorySave<T>(T memory){
+		await jsRuntime.InvokeAsync<string>(
+			"localStorage.setItem",new[]{"todo",JsonSerializer.Serialize(memory)});
+	}
+
+	protected override async Task OnInitializedAsync(){
+		try{
+			items=await memoryLoad<List<Item>>();
+		}
+		catch{}
+	}
+
+	async Task regist(){
+		await Task.Delay(1);
+		await memorySave(items);
+	}
+
+	async Task addItem(KeyboardEventArgs e){
+		if(e.Key=="Enter"){
+			items.Add(new Item{title=newTitle,isChecked=false});
+			newTitle="";
+			await regist();
+		}
+	}
+
+	async Task delItem(){
+		items.RemoveAll(v=>v.isChecked);
+		await regist();
+	}
+}
+
+<style>
+.done-Todo{
+	text-decoration:line-through;
+}
+</style>

@@ -1,0 +1,28 @@
+<html>
+<head>
+	<link rel=stylesheet href="../gspec.css">
+</head>
+<body>
+<div class=counter>
+<h1>Counter</h1>
+
+<p>Current count: <span id=currentCount></span></p>
+
+<button onclick="IncrementCount()">Click me</button>
+</div>
+
+<script>
+	const currentCount=document.getElementById("currentCount");
+	currentCount.innerText=0;
+
+	function IncrementCount(){
+		currentCount.innerText++;
+	}
+</script>
+<script>
+	const setHeight=()=>parent.postMessage(document.documentElement.scrollHeight);
+	window.addEventListener("resize",setHeight);
+	setHeight();
+</script>
+</body>
+</html>
