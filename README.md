@@ -40,7 +40,7 @@ Blazorのクライアントサイド版はまだ正式なリリースを迎え�
 新規プロジェクトは下記コマンドで作る。  
 
 ```bat
-$ dotnet new blazorwasm -n hoge
+C:\> dotnet new blazorwasm -n hoge
 ```
 
 ```bat:実行コマンド
@@ -57,6 +57,34 @@ C:\br> dotnet publish -c Release -o dist
 ```
 
 [起動サンプル](https://spa-blazor.web.app/)
+
+## rt(./React/)
+Node.js+npmを使用。
+プロジェクトの作成に[create-react-app](https://ja.reactjs.org/docs/create-a-new-react-app.html])、ルーターを使用するために[react-router-dom](https://www.npmjs.com/package/react-router-dom]を使用。
+
+```bat
+C:\> npx create-react-app hoge
+C:\> cd hoge
+C:\hoge> npm --save react-router-dom
+```
+
+```bat:実行コマンド
+# ディレクトリの移動
+C:\> cd rt
+
+# 必要なモジュールをインストール
+C:\rt> npm install
+
+# ローカルサーバーを起動
+# http://localhost:3000/ で開く
+C:\rt> npm start
+
+# ビルド
+# /rt/build/ にファイルが書き出される
+C:\rt> yarn build
+```
+
+[起動サンプル](https://spa-reacts.web.app/)
 
 ## IFrame(./im/)
 iframeでSPA風に見せかけたただのhtml。  
