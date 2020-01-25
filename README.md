@@ -60,7 +60,7 @@ Blazorのクライアントサイド版はまだ正式なリリースを迎え�
 
 ## React(./rt/)
 Node.js+npmを使用。
-プロジェクトの作成に[create-react-app](https://ja.reactjs.org/docs/create-a-new-react-app.html])、ルーターを使用するために[react-router-dom](https://www.npmjs.com/package/react-router-dom]を使用。
+プロジェクトの作成に[create-react-app](https://ja.reactjs.org/docs/create-a-new-react-app.html)、ルーターを使用するために[react-router-dom](https://www.npmjs.com/package/react-router-dom)を使用。
 
 ```bat
 ~$ npx create-react-app hoge
