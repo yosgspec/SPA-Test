@@ -58,7 +58,7 @@ C:\br> dotnet publish -c Release -o dist
 
 [起動サンプル](https://spa-blazor.web.app/)
 
-## rt(./React/)
+## React(./rt/)
 Node.js+npmを使用。
 プロジェクトの作成に[create-react-app](https://ja.reactjs.org/docs/create-a-new-react-app.html])、ルーターを使用するために[react-router-dom](https://www.npmjs.com/package/react-router-dom]を使用。
 
