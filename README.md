@@ -16,20 +16,20 @@ SPA(シングルページアプリケーション)をVue.jsとBlazorで試しに
 パッケージマネージャーはnpmでなく[yarn](https://yarnpkg.com/lang/ja/)を使用する。  
 Vue.jsプロジェクトを新しく作るときは[Vue CLI](https://cli.vuejs.org/)を使用。  
 
-```bat:実行コマンド
+```bash:実行コマンド
 # ディレクトリの移動
-C:\> cd ve
+~$ cd ve
 
 # 必要なモジュールをインストール
-C:\ve> yarn install
+~/ve$ yarn install
 
 # ローカルサーバーを起動
 # http://localhost:8080/ で開く
-C:\ve> yarn serve
+~/ve$ yarn serve
 
 # ビルド
 # /ve/dist/ にファイルが書き出される
-C:\ve> yarn build
+~/ve$ yarn build
 ```
 
 [起動サンプル](https://spa-vue-js.web.app/)
@@ -40,20 +40,20 @@ Blazorのクライアントサイド版はまだ正式なリリースを迎え�
 新規プロジェクトは下記コマンドで作る。  
 
 ```bat
-C:\> dotnet new blazorwasm -n hoge
+~$ dotnet new blazorwasm -n hoge
 ```
 
-```bat:実行コマンド
+```bash:実行コマンド
 # ディレクトリの移動
-C:\> cd br
+~$ cd br
 
 # ローカルサーバーを起動
 # http://localhost:5000 で開く
-C:\br> dotnet run
+~/br$ dotnet run
 
 # ビルド
 # /br/dist/br/dist/ にファイルが書き出される
-C:\br> dotnet publish -c Release -o dist
+~/br$ dotnet publish -c Release -o dist
 ```
 
 [起動サンプル](https://spa-blazor.web.app/)
@@ -63,25 +63,25 @@ Node.js+npmを使用。
 プロジェクトの作成に[create-react-app](https://ja.reactjs.org/docs/create-a-new-react-app.html])、ルーターを使用するために[react-router-dom](https://www.npmjs.com/package/react-router-dom]を使用。
 
 ```bat
-C:\> npx create-react-app hoge
-C:\> cd hoge
-C:\hoge> npm --save react-router-dom
+~$ npx create-react-app hoge
+~$ cd hoge
+~/hoge$ npm --save react-router-dom
 ```
 
-```bat:実行コマンド
+```bash:実行コマンド
 # ディレクトリの移動
-C:\> cd rt
+~$ cd rt
 
 # 必要なモジュールをインストール
-C:\rt> npm install
+~/rt$ npm install
 
 # ローカルサーバーを起動
 # http://localhost:3000/ で開く
-C:\rt> npm start
+~/rt$ npm start
 
 # ビルド
 # /rt/build/ にファイルが書き出される
-C:\rt> yarn build
+~/rt$ yarn build
 ```
 
 [起動サンプル](https://spa-reacts.web.app/)
@@ -91,13 +91,13 @@ iframeでSPA風に見せかけたただのhtml。
 
 Python等で適当にサーバーを立ち上げて動作を確認する。  
 
-```bat:実行コマンド
+```bash:実行コマンド
 # ディレクトリの移動
-C:\> cd im/dist
+~$ cd im/dist
 
 # サーバーの起動
 # http://localhost:8000 で開く
-py -3 -m http.server 
+~/im/dist$ py -3 -m http.server 
 ```
 
 [起動サンプル](https://spa-iflame.web.app/)
